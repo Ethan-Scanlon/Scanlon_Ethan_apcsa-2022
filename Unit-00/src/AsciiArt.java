@@ -14,10 +14,21 @@ public class AsciiArt
 		System.out.println("What type of ANIMAL YOU WILL DRAW" );
 		System.out.println("\n\n\n\n" );
 
-		System.out.println("                /\\                " );
-		System.out.println("               /  \\               " );
-		System.out.println("              /    \\              " );
-		System.out.println("             [------]             " );
+		System.out.println("                /\\          /\\        " );
+		System.out.println("               /  \\        /  \\      " );
+		System.out.println("              /    \\      /    \\     " );
+		System.out.println("             |       		|" );
+		System.out.println("             |  .          .    |" );
+		System.out.println("             |        		|" );
+		System.out.println("             |    __	__   	|" );
+		System.out.println("             |    __   	__	|" );
+		System.out.println("             |    __   	__	|" );
+		System.out.println("             |       		|" );
+		System.out.println("              \\       	       /" );
+		System.out.println("               \\       	      /" );
+		System.out.println("               ---------------" );
+		
+		System.out.println("\n\nThis is definitely a cat" );
 		//add other output
 
 		System.out.println(" \n\n\n\nHelpFul Hints" );
