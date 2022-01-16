@@ -1,10 +1,10 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-//Date -
-//Class -
-//Lab  -
+//Name - Ethan Scanlon
+//Date - 1/13/21
+//Class - APCSA per 1
+//Lab  - AsciiBox.java
 
 public class AsciiBox
 {

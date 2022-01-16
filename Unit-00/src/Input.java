@@ -1,10 +1,10 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-//Date -
-//Class -
-//Lab  -
+//Name - Ethan Scanlon 
+//Date - 1/15/21
+//Class - APCSA per 1
+//Lab  - Input.java
 
 import static java.lang.System.*;
 import java.util.Scanner;
