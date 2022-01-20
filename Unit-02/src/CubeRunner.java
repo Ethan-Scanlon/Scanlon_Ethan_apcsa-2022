@@ -1,7 +1,7 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name -
-//Date -
+//Name -Ethan Scanlon
+//Date - 1/19/21
 
 public class CubeRunner
 {
