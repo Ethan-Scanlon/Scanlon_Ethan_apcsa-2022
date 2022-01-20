@@ -1,8 +1,8 @@
 //© A+ Computer Science  -  www.apluscompsci.com
-//Name -
-//Date -
-//Class -
-//Lab  - 
+//Name - Ethan Scanlon
+//Date - 1/19/22
+//Class - CSA per 1
+//Lab  - line
 
 public class LineRunner
 {
