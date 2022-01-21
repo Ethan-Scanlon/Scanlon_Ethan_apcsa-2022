@@ -29,8 +29,9 @@ public class MPHRunner
 		test.calcMPH();
 		test.print();
 		
+		
 		//add more test cases
 		
-		
+		System.out.println(test.toString());
 	}
 }
