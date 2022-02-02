@@ -27,15 +27,28 @@ public class LetterRemover
 		sentence = s;
 		lookFor = rem;
 	}
+	
+	public String charToString() {
+		return "" + lookFor;
+	}
 
 	public String removeLetters()
 	{
-		String cleaned=sentence;
-		return cleaned;
+//		String cleaned=sentence;//
+//		
+		String addition = "";
+		
+		for(int i=0; i < sentence.length(); i++) {
+			if(!sentence.substring(i, i+1).equals(charToString())) {
+				addition += sentence.substring(i, i+1);
+			}
+		}
+		return addition;
 	}
 
 	public String toString()
 	{
-		return sentence + " - letter to remove " + lookFor;
+		return sentence + " - letter to remove " + lookFor + "\n" + removeLetters();
+	
 	}
 }
