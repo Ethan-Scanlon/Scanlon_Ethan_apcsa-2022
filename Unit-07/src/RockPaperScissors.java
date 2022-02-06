@@ -26,29 +26,30 @@ public class RockPaperScissors
 	{
 		playChoice = player;
 		int temp = (int) Math.ceil(3*Math.random());
-		 if(temp==0) compChoice = "R";
-		 if(temp==1) compChoice = "P";
-		 if (temp==2) compChoice = "S";
+		 if(temp==1) compChoice = "R";
+		 if(temp==2) compChoice = "P";
+		 if (temp==3) compChoice = "S";
 	}
 
 	public String determineWinner()
 	{
 		String winner="";
-		if(playChoice == "R" && compChoice == "P") winner = "computer";
-		if(playChoice == "P" && compChoice == "S") winner = "computer";
-		if(playChoice == "S" && compChoice =="R") winner = "computer";
-		if((playChoice =="R" && compChoice =="R") || (playChoice=="P"&&compChoice=="P") || (playChoice=="S"&&compChoice=="S"))
+		
+		if(playChoice.equals("R") && compChoice == "P") winner = "computer";
+		if(playChoice.equals("P") && compChoice == "S") winner = "computer";
+		if(playChoice.equals("S") && compChoice =="R") winner = "computer";
+		if((playChoice.equals("R") && compChoice =="R") || (playChoice.equals("P")&&compChoice=="P") || (playChoice.equals("S")&&compChoice=="S"))
 				winner="draw";
-		if(playChoice=="R"&&compChoice=="S") winner="player";
-		if(playChoice=="P"&& compChoice == "R") winner="player";
-		if(playChoice=="S"&&compChoice=="P")winner="player";
+		if(playChoice.equals("R")&&compChoice=="S") winner="player";
+		if(playChoice.equals("P")&& compChoice == "R") winner="player";
+		if(playChoice.equals("S")&&compChoice=="P")winner="player";
 		return winner;
 	}
 
 	public String toString()
 	{
 		String output="player had " + playChoice + "\n" + "computer had "+ compChoice
-				+ "\n" + determineWinner() + "wins!";
+				+ "\n" + determineWinner() + " wins!";
 		return output;
 	}
 }
