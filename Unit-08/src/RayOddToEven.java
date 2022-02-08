@@ -18,6 +18,9 @@ public class RayOddToEven
 				
 				if(oddIndex==i && evenIndex==j) {
 					return evenIndex-oddIndex;
+				if(oddIndex==-1 || evenIndex == -1) { 
+					return -1;
+				
 				}
 				
 			}
