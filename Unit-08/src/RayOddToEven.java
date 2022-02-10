@@ -11,17 +11,16 @@ public class RayOddToEven
 		int evenIndex = -1;
 	
 		for(int i = 0; i<ray.length; i++) {
-			if(ray[i] % 2 == 1) oddIndex = i;
+			if(ray[i] % 2 == 1) {
+				oddIndex = i;
 		
 			for(int j = oddIndex; j<ray.length; j++) {
 				if(ray[j] % 2 ==0) evenIndex = j;
 				
 				if(oddIndex==i && evenIndex==j) {
 					return evenIndex-oddIndex;
-				if(oddIndex==-1 || evenIndex == -1) { 
-					return -1;
-				
 				}
+			}
 				
 			}
 			
