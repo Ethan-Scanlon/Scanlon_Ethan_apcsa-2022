@@ -32,10 +32,12 @@ public class Deck {
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		Card[] cards = new Card[ranks.length * suits.length];
+		
+		cards = new Card[ranks.length * suits.length];
 		for(int j = 0; j < ranks.length; j++) {
 			for(int i = 0; i < suits.length; i++) {
-				cards[i] = new Card(ranks[i], suits[i], values[i]);
+				int k = (suits.length) * j + i;
+				cards[k++] = new Card(ranks[j], suits[i], values[j]);
 			}
 		}	
 		size = cards.length;
@@ -48,7 +50,7 @@ public class Deck {
 	 */
 	public boolean isEmpty() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		return size == 0;
+		return cards.length == 0;
 	}
 
 	/**
