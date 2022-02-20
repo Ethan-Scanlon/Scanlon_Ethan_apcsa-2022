@@ -41,6 +41,7 @@ public class Deck {
 			}
 		}	
 		size = cards.length;
+		shuffle();
 	}
 
 
@@ -69,6 +70,12 @@ public class Deck {
 	 */
 	public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		for(int k=size-1; k>0; k--) {
+			int r = (int)((k+1)*(Math.random()));
+			Card z = cards[r]; // remember, z is type Card, not int!!
+			cards[r] = cards[k];
+			cards[k] = z;
+		}
 	}
 
 	/**

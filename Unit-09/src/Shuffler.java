@@ -90,7 +90,6 @@ public class Shuffler {
 	 */
 	public static void selectionShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
-		int[] shuffled = new int[values.length];
 		for(int k=values.length-1; k>0; k--) {
 			int r = (int)((k+1)*(Math.random()));
 			int z = values[r];

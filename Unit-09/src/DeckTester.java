@@ -24,7 +24,7 @@ public class DeckTester {
 
 		String[] rankTwo = { "Jack", "2", "4", "9" };
 		String[] suitTwo = { "Hearts", "Spades", "Clubs" };
-		int[] valueTwo = { 11, 2, 3, 9 };
+		int[] valueTwo = { 11, 2, 4, 9 };
 		Deck deckTwo = new Deck(rankTwo, suitTwo, valueTwo);
 		System.out.println("DeckTwo is empty: " + deckTwo.isEmpty());
 		System.out.println("DeckTwo size is: " + deckTwo.size());
