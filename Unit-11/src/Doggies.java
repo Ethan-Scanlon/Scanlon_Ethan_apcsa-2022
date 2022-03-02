@@ -26,12 +26,30 @@ public class Doggies
 
 	public String getNameOfOldest()
 	{
-		return null;
+		Dog old = null;
+		int age = 0;
+		int index = 0;
+		for(int i = 0; i < pups.length; i++) {
+			if(pups[i].getAge() > age) {
+				age = pups[i].getAge();
+				index = i;
+			}
+		}
+		return pups[index].getName();
 	}
 
 	public String getNameOfYoungest()
 	{
-		return null;
+		Dog old = null;
+		int age = 0;
+		int index = 0;
+		for(int i = 0; i < pups.length; i++) {
+			if(pups[i].getAge() < age) {
+				age = pups[i].getAge();
+				index = i;
+			}
+		}
+		return pups[index].getName();
 	}
 
 	public String toString()
