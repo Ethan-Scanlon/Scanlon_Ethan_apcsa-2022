@@ -14,10 +14,13 @@ public class ToyStore
 
 	public ToyStore()
 	{
+		toyList = new ArrayList<Toy>();
 	}
 
 	public void loadToys( String toys )
 	{
+		String[] check = toys.split(" ", 0);
+		for(int i = 0; i<toys.length(); i++)
 	}
   
   	public Toy getThatToy( String nm )
