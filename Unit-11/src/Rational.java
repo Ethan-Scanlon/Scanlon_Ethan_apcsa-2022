@@ -57,7 +57,7 @@ class Rational implements Comparable<Rational>
 	{
 		if (num != 0)
         {
-            int common = gcd (Math.abs(num), den);
+            int common = gcd (num, den);
  
             num = num / common;
             den = den / common;
