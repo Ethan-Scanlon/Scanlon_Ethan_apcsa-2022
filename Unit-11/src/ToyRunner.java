@@ -11,5 +11,6 @@ public class ToyRunner
 		Toy thing = new Toy("apple");
 		thing.setCount(10000);
 		System.out.println(thing);
+		
 	}
 }

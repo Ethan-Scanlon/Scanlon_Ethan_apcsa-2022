@@ -20,11 +20,11 @@ public class ToyStore
 	public void loadToys( String toys ) {
 		int count = 0;
 		String[] check = toys.split(" ", 0);
-		for(int i = 0; i<toys.length(); i++) {
+		for(int i=0; i<check.length; i++) {
 			count = 0;
 			Toy newToy = new Toy(check[i]);
-			for(int j = i; j<check.length; j++) {
-				if(check[i].compareTo(check[i]) == 0) {
+			for(int j=i; j<check.length; j++) {
+				if(check[i].compareTo(check[j]) == 0) {
 					count++;
 				}
 			}
@@ -52,11 +52,27 @@ public class ToyStore
   
   	public String getMostFrequentToy()
   	{
-  		return "";
+//  		String freq = toyList.get(0).getName();
+//	  		for(int i=0; i<toyList.size()-1; i++) {
+//	  			if((int)toyList.get(i).getCount() < (int)toyList.get(i+1).getCount()) {
+//	  				freq=toyList.get(i+1).getName();
+//	  			}
+//	  		}
+  		return "max == " + toyList.get(toyList.size()-1);
   	}  
   
   	public void sortToysByCount()
   	{
+  	
+  		for(int k=0; k<toyList.size(); k++) {
+	  		for(int i=0; i<toyList.size()-1; i++) {
+	  			if(toyList.get(i).getCount()>toyList.get(i+1).getCount()) {
+	  				Toy z = toyList.get(i);
+	  				toyList.set(i, toyList.get(i+1));
+	  				toyList.set(i+1, z);
+	  			}
+	  		}
+  		}
   	}  
   	  
 	public String toString()
