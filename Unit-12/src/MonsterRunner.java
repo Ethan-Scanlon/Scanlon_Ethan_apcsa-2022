@@ -29,7 +29,20 @@ public class MonsterRunner
 		//instantiate monster two
 		
 		Skeleton monster2 = new Skeleton(name2, size2);
+		System.out.println("Monster 1 - " + monster1);
+		System.out.println("Monster 2 - " + monster2);
+		if(monster1.isBigger(monster2)) {
+			System.out.println("Monster one is bigger than Monster two.");
+		}
+		else {
+			System.out.println("Monster one is smaller than Monster two.");
+		}
 		
-		
+		if(monster1.namesTheSame(monster2)) {
+			System.out.println("Monster one has the same name as Monster two.");
+		}
+		else {
+			System.out.println("Monster one does not have the same name as Monster two.");
+		}
 	}
 }

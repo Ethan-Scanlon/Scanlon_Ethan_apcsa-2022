@@ -46,7 +46,6 @@ public class Skeleton implements Monster
 	//add a toString
 	
 	public String toString() {
-		return "Monster 1 - " + getName() + " " + getHowBig() + "\n" + 
-	"Monster 2 - " 
+		return name + " " + size;
 	}
 }
