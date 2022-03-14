@@ -99,6 +99,6 @@ public class ElevensBoard extends Board {
 		boolean containsJack = false;
 		boolean containsQueen = false;
 		boolean containsKing = false;
-		
+		for(Integer kObj:)
 	}
 }
