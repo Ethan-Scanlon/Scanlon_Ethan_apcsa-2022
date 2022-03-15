@@ -11,8 +11,8 @@ public class Deck {
 	/**
 	 * cards contains all the cards in the deck.
 	 */
-//	private List<Card> cards;
-	private Card[] cards;
+	private List<Card> cards;
+//	private Card[] cards;
 
 	/**
 	 * size is the number of not-yet-dealt cards.
@@ -33,14 +33,14 @@ public class Deck {
 	public Deck(String[] ranks, String[] suits, int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 		
-		cards = new Card[ranks.length * suits.length];
+		cards = new ArrayList<Card>();
 		for(int j = 0; j < ranks.length; j++) {
 			for(int i = 0; i < suits.length; i++) {
 				int k = (suits.length) * j + i;
-				cards[k++] = new Card(ranks[j], suits[i], values[j]);
+				cards.add(new Card(ranks[j], suits[i], values[j]));
 			}
 		}	
-		size = cards.length;
+		size = cards.size();
 		shuffle();
 	}
 
@@ -72,9 +72,9 @@ public class Deck {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
 		for(int k=size-1; k>0; k--) {
 			int r = (int)((k+1)*(Math.random()));
-			Card z = cards[r]; // remember, z is type Card, not int!!
-			cards[r] = cards[k];
-			cards[k] = z;
+			Card z = cards.get(r); // remember, z is type Card, not int!!
+			cards.set(r, cards.get(k)); 
+			cards.set(k,z);
 		}
 	}
 
@@ -87,7 +87,7 @@ public class Deck {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 		if(size > 0) {
 			size--;
-			return cards[size];
+			return cards.get(size);
 		}
 		else
 			return null;
@@ -103,7 +103,7 @@ public class Deck {
 		String rtn = "size = " + size + "\nUndealt cards: \n";
 
 		for (int k = size - 1; k >= 0; k--) {
-			rtn = rtn + cards[k];
+			rtn = rtn + cards.get(k);
 			if (k != 0) {
 				rtn = rtn + ", ";
 			}
@@ -115,7 +115,7 @@ public class Deck {
 
 		rtn = rtn + "\nDealt cards: \n";
 		for (int k = size - 1; k >= size; k--) {
-			rtn = rtn + cards[k];
+			rtn = rtn + cards.get(k);
 			if (k != size) {
 				rtn = rtn + ", ";
 			}
