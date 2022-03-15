@@ -70,6 +70,7 @@ public class Deck {
 	 */
 	public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		size= cards.size();
 		for(int k=size-1; k>0; k--) {
 			int r = (int)((k+1)*(Math.random()));
 			Card z = cards.get(r); // remember, z is type Card, not int!!
