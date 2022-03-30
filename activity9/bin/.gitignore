@@ -1,4 +1,3 @@
-/cards/
 /Board.class
 /Card.class
 /CardGameGUI$1.class
@@ -11,3 +10,4 @@
 /ElevensBoard.class
 /ElevensGUIRunner.class
 /Shuffler.class
+/cards/
