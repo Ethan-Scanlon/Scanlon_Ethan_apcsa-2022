@@ -25,9 +25,11 @@ public class NumberSorter
 
 	public static int[] getSortedDigitArray(int number)
 	{
-		int[] stuff = null;
+		int[] stuff = new int[getNumDigits(number)];
+		int thing = number;
 		for(int i = 0; i<getNumDigits(number); i++) {
-			
+			stuff[i] = thing %10;
+			thing = thing/10;
 		}
 		for(int i=0; i< stuff.length-1; i++){
 		      int min = i;
@@ -43,6 +45,6 @@ public class NumberSorter
 		      }
 		   }
 
-		return sorted;
+		return stuff;
 	}
 }
