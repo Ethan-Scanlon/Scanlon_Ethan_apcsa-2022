@@ -84,6 +84,8 @@ public class PictureTester
 	  beach.explore();
   }
   
+  
+  
   public static void testNegate() {
 	  Picture beach = new Picture("beach.jpg");
 	  beach.explore();
@@ -163,13 +165,13 @@ public class PictureTester
     // and comment out the ones you don't want
     // to run
 //    testZeroBlue();
-//    testKeepOnlyBlue();
-    //testKeepOnlyRed();
+    testKeepOnlyBlue();
+//    testKeepOnlyRed();
     //testKeepOnlyGreen();
 //    testNegate();
 //    testGrayScale();
 //    testFixUnderwater();
-//    testMirrorVertical();
+    testMirrorVertical();
 //	  testMirrorVerticalRightToLeft();
 //	  testMirrorHorizontal();
 //	  testMirrorHorizontalBotToTop();
@@ -178,12 +180,12 @@ public class PictureTester
 //    testMirrorArms();
 //    testMirrorGull();
     //testMirrorDiagonal();
-    //testCollage();
+//    testCollage();
 //    testCopy();
 //    testCopy2();
 //	  testMyCollage();
     testEdgeDetection();
-    testEdgeDetection2();
+//    testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);
