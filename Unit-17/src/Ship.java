@@ -90,6 +90,16 @@ public class Ship extends MovingThing
 	   return speed;
 	}
 
+	public boolean didCollide(Alien al) {
+		if (getX() + getWidth()-30 >= al.getX() && getX() <= al.getX() + al.getWidth()-30
+				&& getY() + getHeight()-30 >= al.getY()
+				&& getY() <= al.getY() + al.getHeight()-30) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	public void move(String direction)
 	{
 		//add code here

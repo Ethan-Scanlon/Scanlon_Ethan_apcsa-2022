@@ -10,17 +10,18 @@ import javax.imageio.ImageIO;
 
 public class Ammo extends MovingThing
 {
+	private boolean life = true;
 	private int speed;
 
 	public Ammo()
 	{
-		this(0,0,0);
+		this(0,0,5);
 	}
 
 	public Ammo(int x, int y)
 	{
 		//add code
-		this(x,y,0);
+		this(x,y,5);
 	}
 
 	public Ammo(int x, int y, int s)
@@ -52,22 +53,33 @@ public class Ammo extends MovingThing
 	public void move( String direction )
 	{
 		//add code to draw the ammo
-		 if(direction.equals("RIGHT")) {
-			 setX(getX() + speed);
-		 }
-		 if(direction.equals("LEFT")) {
-			 setX(getX() -speed);
-		 }
-		 if(direction.equals("UP")) {
-			 setY(getY() - speed);
-		 }
-		 if(direction.equals("DOWN")) {
-			 setY(getY() + speed);
-		 }
+		setY(getY() - speed);
 	}
 
 	public String toString()
 	{
 		return "";
+	}
+	
+	public boolean didCollide(Alien al) {
+		if (getX() + 10 >= al.getX() && getX() <= al.getX() + al.getWidth()
+				&& getY() - 10 >= al.getY()
+				&& getY() <= al.getY() + al.getHeight()) {
+			kill();
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public boolean isAlive() {
+		if (getY() < 0) {
+			kill();
+		}
+		return life;
+	}
+
+	public void kill() {
+		life = false;
 	}
 }

@@ -17,8 +17,9 @@ import java.util.ArrayList;
 public class OuterSpace extends Canvas implements KeyListener, Runnable
 {
 	private Ship ship;
-	private Alien alienOne;
-	private Alien alienTwo;
+	
+	private AlienHorde horde;
+	private Bullets shots;
 
 	/* uncomment once you are ready for this part
 	 *
@@ -38,8 +39,13 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		//instantiate other instance variables
 		//Ship, Alien
 		ship = new Ship(400,400, 80, 80, 2);
-		alienOne = new Alien(100,100);
-		alienTwo = new Alien(300,100);
+		horde = new AlienHorde(12);
+		
+		for (int i = 0; i < 10; i++) {
+            horde.add(new Alien(100 + i * 60, 200, 50, 50, 3));
+        }
+		
+		shots = new Bullets();
 
 		this.addKeyListener(this);
 		new Thread(this).start();
@@ -56,7 +62,8 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 	{
 		//set up the double buffering to make the game animation nice and smooth
 		Graphics2D twoDGraph = (Graphics2D)window;
-
+		
+		
 		//take a snap shop of the current screen and same it as an image
 		//that is the exact same width and height as the current screen
 		if(back==null)
@@ -71,29 +78,38 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		graphToBack.setColor(Color.BLACK);
 		graphToBack.fillRect(0,0,800,600);
 
-		if(keys[0] == true)
-		{
-			ship.move("LEFT");
-		}
-		if(keys[1] == true) 
-		{
-			ship.move("RIGHT");
-		}
-		if(keys[2] == true)
-		{
-			ship.move("UP");
-		}
-		if(keys[3] == true)
-		{
-			ship.move("DOWN");
-		}
-
+	
+			if(keys[0] == true)
+			{
+				ship.move("LEFT");
+			}
+			if(keys[1] == true) 
+			{
+				ship.move("RIGHT");
+			}
+			if(keys[2] == true)
+			{
+				ship.move("UP");
+			}
+			if(keys[3] == true)
+			{
+				ship.move("DOWN");
+			}
+			if (keys[4] == true) {
+	            shots.add(new Ammo(ship.getX() + ship.getWidth() / 2 - 10, ship.getY()));
+	            keys[4] = false;
+	        }
+		
 		//add code to move Ship, Alien, etc.
 //		twoDGraph.drawImage(back, null, 0, 0);
-		ship.draw(graphToBack);
-		alienOne.draw(graphToBack);
-		alienTwo.draw(graphToBack);
-
+		
+		horde.removeDeadOnes(shots.getList());
+	    horde.moveEmAll();
+	    horde.drawEmAll(graphToBack);
+	    shots.moveEmAll();
+	    shots.cleanEmUp();
+	    shots.drawEmAll(graphToBack);
+	    ship.draw(graphToBack);
 
 		//add in collision detection to see if Bullets hit the Aliens and if Bullets hit the Ship
 

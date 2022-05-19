@@ -16,7 +16,7 @@ public class Alien extends MovingThing
 
 	public Alien()
 	{
-		this(0,0,30,30,0);
+		this(0,0,30,30,5);
 		try
 		{
 			URL url = getClass().getResource("C:\\Users\\scanlone4316\\Desktop\\newAPCSA2022\\Unit-17\\src\\alien.jpg");
@@ -85,15 +85,33 @@ public class Alien extends MovingThing
 
 	public int getSpeed()
 	{
-	   return 0;
+	   return speed;
 	}
 
    public void move(String direction)
 	{
 	   //add code here
-	   setX(getX()+25);
+	   if(getX() > 750 || getX() < 50)
+           speed = -speed;
+
+       setX(getX() + speed);
 	}
 
+   public boolean isBetween(int x, int y, int z){
+       return x >= y && x <= z;
+   }
+   
+   public boolean isColliding(Ammo a){
+       int ay = a.getY() + a.getSpeed();
+       int ax = a.getX() - this.getSpeed();
+       if(isBetween(ay, getY(), getY() + getHeight()) || isBetween(ay + a.getHeight(), getY(), getY() + getHeight())){
+           if(isBetween(ax, getX(), getX() + getWidth()) || isBetween(ax, getX(), getX() + getWidth())){
+               return true;
+           }
+       }
+       return false;
+   }
+   
 	public void draw( Graphics window )
 	{
    	window.drawImage(image,getX(),getY(),getWidth(),getHeight(),null);
