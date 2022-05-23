@@ -159,19 +159,30 @@ public class PictureTester
 	    canvas.explore();
   }
   
+  public static void testEncodeAndDecode() {
+	  Picture original = new Picture("beach.jpg");
+	    Picture hide = new Picture("apple_icon.jpg");
+	    
+//	    original.explore();
+	    original.encode(hide);
+	    original.explore();
+	    original.decode();
+	    original.explore();
+	  
+  }
   public static void main(String[] args)
   {
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
 //    testZeroBlue();
-    testKeepOnlyBlue();
+//    testKeepOnlyBlue();
 //    testKeepOnlyRed();
     //testKeepOnlyGreen();
 //    testNegate();
 //    testGrayScale();
 //    testFixUnderwater();
-    testMirrorVertical();
+//    testMirrorVertical();
 //	  testMirrorVerticalRightToLeft();
 //	  testMirrorHorizontal();
 //	  testMirrorHorizontalBotToTop();
@@ -184,10 +195,10 @@ public class PictureTester
 //    testCopy();
 //    testCopy2();
 //	  testMyCollage();
-    testEdgeDetection();
+//    testEdgeDetection();
 //    testEdgeDetection2();
     //testChromakey();
-    //testEncodeAndDecode();
+    testEncodeAndDecode();
     //testGetCountRedOverValue(250);
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
