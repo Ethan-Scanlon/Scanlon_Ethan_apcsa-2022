@@ -468,7 +468,6 @@ public class Picture extends SimplePicture
 	  {
 		  for (int col = 1; col < this.getWidth(); col+=2)
 		  {
-		  // if the current pixel red is odd make it even
 		  currPixel = currPixels[row][col];
 			  if (currPixel.getRed() == currPixels[row][col-1].getRed() && 
 					  currPixel.getBlue() == currPixels[row][col-1].getBlue() &&
@@ -477,12 +476,6 @@ public class Picture extends SimplePicture
 				  currPixel.setBlue(currPixel.getBlue()+1);
 				  currPixel.setGreen(currPixel.getGreen()+1);
 			  }
-			  
-//			  if (currPixel.colorDistance(Color.BLACK) < 50) {
-//				  currPixel.setRed(currPixels[row][col-1].getRed());
-//				  currPixel.setBlue(currPixels[row][col-1].getBlue());
-//				  currPixel.setGreen(currPixels[row][col-1].getGreen());
-//			  }
 			
 			  messagePixel = messagePixels[row][col];
 			  if (messagePixel.colorDistance(Color.BLACK) < 50)
