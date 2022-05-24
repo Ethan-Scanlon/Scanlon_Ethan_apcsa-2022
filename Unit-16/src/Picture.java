@@ -466,16 +466,30 @@ public class Picture extends SimplePicture
   int count = 0;
 	  for (int row = 0; row < this.getHeight(); row++)
 	  {
-		  for (int col = 0; col < this.getWidth(); col++)
+		  for (int col = 1; col < this.getWidth(); col+=2)
 		  {
 		  // if the current pixel red is odd make it even
 		  currPixel = currPixels[row][col];
-			  if (currPixel.getRed() % 2 == 1)
-			  currPixel.setRed(currPixel.getRed() - 1);
+			  if (currPixel.getRed() == currPixels[row][col-1].getRed() && 
+					  currPixel.getBlue() == currPixels[row][col-1].getBlue() &&
+					  		currPixel.getGreen() == currPixels[row][col-1].getGreen()) {
+				  currPixel.setRed(currPixel.getRed()+1);
+				  currPixel.setBlue(currPixel.getBlue()+1);
+				  currPixel.setGreen(currPixel.getGreen()+1);
+			  }
+			  
+//			  if (currPixel.colorDistance(Color.BLACK) < 50) {
+//				  currPixel.setRed(currPixels[row][col-1].getRed());
+//				  currPixel.setBlue(currPixels[row][col-1].getBlue());
+//				  currPixel.setGreen(currPixels[row][col-1].getGreen());
+//			  }
+			
 			  messagePixel = messagePixels[row][col];
 			  if (messagePixel.colorDistance(Color.BLACK) < 50)
 			  {
-			  currPixel.setRed(currPixel.getRed() + 1);
+				  currPixel.setRed(currPixels[row][col-1].getRed());
+				  currPixel.setBlue(currPixels[row][col-1].getBlue());
+				  currPixel.setGreen(currPixels[row][col-1].getGreen());
 			  count++;
 			  }
 		  }
@@ -500,14 +514,21 @@ public class Picture extends SimplePicture
   int count = 0;
 	  for (int row = 0; row < this.getHeight(); row++)
 	  {
-		  for (int col = 0; col < this.getWidth(); col++)
+		  for (int col = 1; col < this.getWidth(); col+=2)
 		  {
 		  currPixel = pixels[row][col];
 		  messagePixel = messagePixels[row][col];
-			  if (currPixel.getRed() % 2 == 1)
+			  if (currPixel.getRed() == pixels[row][col-1].getRed() &&
+					  currPixel.getGreen() == pixels[row][col-1].getGreen() &&
+					  	currPixel.getBlue() == pixels[row][col-1].getBlue())
 			  {
-			  messagePixel.setColor(Color.BLACK);
+			  pixels[row][col].setColor(Color.BLACK);
+			  pixels[row][col-1].setColor(Color.BLACK);
 			  count++;
+			  }
+			  else {
+				  pixels[row][col].setColor(Color.WHITE);
+				  pixels[row][col-1].setColor(Color.WHITE);
 			  }
 		  }
 	  }

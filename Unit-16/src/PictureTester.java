@@ -160,10 +160,10 @@ public class PictureTester
   }
   
   public static void testEncodeAndDecode() {
-	  Picture original = new Picture("beach.jpg");
-	    Picture hide = new Picture("apple_icon.jpg");
+	  Picture original = new Picture("arch.jpg");
+	    Picture hide = new Picture("msg.jpg");
 	    
-//	    original.explore();
+	    original.explore();
 	    original.encode(hide);
 	    original.explore();
 	    original.decode();
